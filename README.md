@@ -8,3 +8,17 @@ O Sneaker Hunter nasce com o objetivo principal encurtar o caminho entre você e
 
 ## Problema
 
+Encontrar boas oportunidades de sneakers exige consultar diferentes lojas, comparar preços, verificar disponibilidade de tamanhos e separar promoções realmente interessantes de produtos que não fazem sentido para o usuário.
+
+O Sneaker Hunter busca centralizar e automatizar esse processo.
+
+## Como funciona?
+
+1. Coleta produtos de diferentes lojas
+2. Padroniza as informações
+3. Identifica preço, desconto e disponibilidade
+4. Aplica filtros de interesse
+5. Classifica os produtos de acordo com as preferências do usuário
+6. Mantém histórico de preços
+7. Exibe os resultados em uma interface
+8. Envia alertas para oportunidades relevantes
