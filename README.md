@@ -22,3 +22,26 @@ O Sneaker Hunter busca centralizar e automatizar esse processo.
 6. Mantém histórico de preços
 7. Exibe os resultados em uma interface
 8. Envia alertas para oportunidades relevantes
+
+## Arquitetura
+
+Em construção 🚧
+
+## Tecnologias
+
+- Python
+- pandas
+- requests / BeautifulSoup
+- SQLite
+- Streamlit
+- API de IA
+
+## Roadmap
+
+- [ ] Coleta de produtos
+- [ ] Normalização dos dados
+- [ ] Filtros por tamanho, preço e desconto
+- [ ] Histórico de preços
+- [ ] Classificação por IA
+- [ ] Interface em Streamlit
+- [ ] Sistema de alertas
