@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 
 url = "https://www.youridstore.com.br/api"
 
@@ -9,6 +10,8 @@ headers = {
     "Origin": "https://www.youridstore.com.br",
     "Referer": "https://www.youridstore.com.br/"
 }
+
+tenis_encontrados = []
 
 pagina = 1
 
@@ -46,10 +49,23 @@ while True:
             estoque = sku["stock"]
 
             if "Tênis" in produto["name"] and tamanho == "41" and estoque > 0:
-                print("\n👟", produto["name"])
-                print("Preço original:", produto["price"])
-                print("Preço promocional:", produto["pricePromotion"])
-                print("Tamanho:", tamanho)
-                print("Estoque:", estoque)
+
+                tenis = {
+                    "id_produto": produto["idProduct"],
+                    "nome": produto["name"],
+                    "preco_original": produto["price"],
+                    "preco_promocional": produto["pricePromotion"],
+                    "tamanho": tamanho,
+                    "estoque": estoque,
+                    "pagina": pagina
+                }
+
+    tenis_encontrados.append(tenis)
 
     pagina = pagina + 1
+
+df = pd.DataFrame(tenis_encontrados)
+df = df.drop_duplicates(subset=["id_produto"])
+df["desconto_pct"] = ((1-(df["preco_promocional"] / df["preco_original"]))*100).round(0)
+print(df)
+
