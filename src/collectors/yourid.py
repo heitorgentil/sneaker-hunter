@@ -31,6 +31,7 @@ while True:
 
     dados = response.json()
     produtos = dados["products"]
+    
 
     if len(produtos) == 0:
         break
@@ -53,11 +54,12 @@ while True:
                 tenis = {
                     "id_produto": produto["idProduct"],
                     "nome": produto["name"],
+                    "marca": produto["brand"]["name"],
                     "preco_original": produto["price"],
                     "preco_promocional": produto["pricePromotion"],
                     "tamanho": tamanho,
                     "estoque": estoque,
-                    "pagina": pagina
+                    "link": f"https://www.youridstore.com.br/{produto['urlFriendly']}?sku={sku['idSku']}"
                 }
 
     tenis_encontrados.append(tenis)
